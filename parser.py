@@ -2,12 +2,12 @@ import requests
 import re
 
 
-A = input().strip()
-res = requests.get(f'{A}')
+utl_list = input().strip()
+res = requests.get(f'{utl_list}')
 
-html_kod_A = res.text
+html_сod_utl_list = res.text
 
-spis_url = re.findall(r"<a .*href=(\"|')(\w+://)*(\w.+?)[:!@#$%^&*()/\\'\"]+?", html_kod_A)
+spis_url = re.findall(r"<a .*href=(\"|')(\w+://)*(\w.+?)[:!@#$%^&*()/\\'\"]+?", html_сod_utl_list)
 
 new_spis = list(set([i[2] for i in spis_url]))
 
